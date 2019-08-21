@@ -81,19 +81,17 @@ int EnvironmentControl::UvLightLevel()
    sum = sum >> 10;
    float Vsig = sum*4980.0/1023.0; // Vsig is the value of voltage measured from the SIG pin of the Grove interface
   if (Vsig < 50) {Serial.print("UV Index: 0 ");currentUvLight = 0;mux.disable();return 0;}
-  if (Vsig > 50 && Vsig < 227) {Serial.print("UV Index: 1 ");currentUvLight = 1;mux.disable();return 1;}
-  if (Vsig > 227 && Vsig < 318) {Serial.print("UV Index: 2 ");currentUvLight = 2;mux.disable();return 2;}
-  if (Vsig > 318 && Vsig < 408) {Serial.print("UV Index: 3 ");currentUvLight = 3;mux.disable();return 3;}
-  if (Vsig > 408 && Vsig < 503) {Serial.print("UV Index: 4 ");currentUvLight = 4;mux.disable();return 4;}
-  if (Vsig > 503 && Vsig < 606) {Serial.print("UV Index: 5 ");currentUvLight = 5;mux.disable();return 5;}
-  if (Vsig > 606 && Vsig < 696) {Serial.print("UV Index: 6 ");currentUvLight = 6;mux.disable();return 6;}
-  if (Vsig > 696 && Vsig < 795) {Serial.print("UV Index: 7 ");currentUvLight = 7;mux.disable();return 7;}
-  if (Vsig > 795 && Vsig < 881) {Serial.print("UV Index: 8 ");currentUvLight = 8;mux.disable();return 8;}
-  if (Vsig > 881 && Vsig < 976) {Serial.print("UV Index: 9 ");currentUvLight = 9;mux.disable();return 9;}
-  if (Vsig > 976 && Vsig < 1079) {Serial.print("UV Index: 10 ");currentUvLight = 10;mux.disable();return 10;}
-  if (Vsig > 1079 && Vsig < 1170) {Serial.print("UV Index: 11 ");currentUvLight = 11;mux.disable();return 11;}
-  if (Vsig > 1170) {Serial.print("UV Index: 11+ ");currentUvLight = 12;mux.disable();return 12;}
-
+  if (Vsig >= 50 && Vsig < 227) {Serial.print("UV Index: 1 ");currentUvLight = 1;mux.disable();return 1;}
+  if (Vsig >= 227 && Vsig < 318) {Serial.print("UV Index: 2 ");currentUvLight = 2;mux.disable();return 2;}
+  if (Vsig >= 318 && Vsig < 408) {Serial.print("UV Index: 3 ");currentUvLight = 3;mux.disable();return 3;}
+  if (Vsig >= 408 && Vsig < 503) {Serial.print("UV Index: 4 ");currentUvLight = 4;mux.disable();return 4;}
+  if (Vsig >= 503 && Vsig < 606) {Serial.print("UV Index: 5 ");currentUvLight = 5;mux.disable();return 5;}
+  if (Vsig >= 606 && Vsig < 696) {Serial.print("UV Index: 6 ");currentUvLight = 6;mux.disable();return 6;}
+  if (Vsig >= 696 && Vsig < 795) {Serial.print("UV Index: 7 ");currentUvLight = 7;mux.disable();return 7;}
+  if (Vsig >= 795 && Vsig < 881) {Serial.print("UV Index: 8 ");currentUvLight = 8;mux.disable();return 8;}
+  if (Vsig >= 881 && Vsig < 976) {Serial.print("UV Index: 9 ");currentUvLight = 9;mux.disable();return 9;}
+  if (Vsig >= 976 && Vsig < 1079) {Serial.print("UV Index: 10 ");currentUvLight = 10;mux.disable();return 10;}
+  if (Vsig >= 1079) {Serial.print("UV Index: 11+ ");currentUvLight = 11;mux.disable();return 11;}
 }
 
 bool uvLightToggleFlg = true;
